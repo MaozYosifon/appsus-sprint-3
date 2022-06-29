@@ -4,7 +4,7 @@ export default {
         <div @click="setStar" ><i :class="{yellow : mail.isStarred} " class="fas fa-star"></i></div>
         <router-link :to="'/mail/'+mail.id">
             <div>{{mail.subject}}</div>
-            <div>{{mail.body}}</div>
+            <div>{{lessText}}</div>
             <div>{{mail.sentAt}}</div>
         </router-link>|
         <div>BTN remove</div>
@@ -30,6 +30,10 @@ export default {
         },
         isRead() {
             return { 'readed-mail': this.mail.isRead }
+        },
+        lessText() {
+            const lessTxt = this.mail.body.substring(0, 30).concat('...')
+            return lessTxt
         }
     },
     unmounted() { },
