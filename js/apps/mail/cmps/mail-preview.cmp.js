@@ -1,7 +1,7 @@
 export default {
     template: `
-    <td class="mail">
-        <div>isStar</div>
+    <td  class="mail" :class="isRead" >
+        <div @click="setStar" ><i :class="{yellow : mail.isStarred} " class="fas fa-star"></i></div>
         <router-link :to="'/mail/'+mail.id">
             <div>{{mail.subject}}</div>
             <div>{{mail.body}}</div>
@@ -17,7 +17,20 @@ export default {
     },
     created() {
     },
-    methods: {},
-    computed: {},
+    methods: {
+        setStar() {
+            this.mail.isStarred =
+                console.log(this.mail);
+            this.$emit('starred', this.mail.id)
+        }
+    },
+    computed: {
+        isStar() {
+            return {}
+        },
+        isRead() {
+            return { 'readed-mail': this.mail.isRead }
+        }
+    },
     unmounted() { },
 };

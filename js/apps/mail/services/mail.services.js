@@ -100,7 +100,7 @@ function _createMails() {
                     status: 'inbox',
                     subject: 'ASAP!!',
                     body: 'https://www.youtube.com/watch?v=j7gKwxRe7MQ',
-                    isRead: false,
+                    isRead: true,
                     isStarred: false,
                     isSent: false,
                     sentAt: 1611237578675,

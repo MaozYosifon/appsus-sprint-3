@@ -1,5 +1,5 @@
 import { mailService } from "../services/mail.services.js";
-
+import { eventBus } from "../../../services/eventBus-service.js";
 
 export default {
     template: `
@@ -7,6 +7,7 @@ export default {
         <header>sender: {{mail.from}} <span>At : {{mail.sentAt}}</span></header>
         <div  v-if="trollMode">  <a :href="fixedTroll">click Here</a></div>
         <div v-else>{{mail.body}}</div>
+        <button><router-link  to="/mail">Back</router-link></button>
     </section>
 `,
     data() {
@@ -18,7 +19,9 @@ export default {
     created() {
 
     },
-    methods: {},
+    methods: {
+
+    },
     mounted() {
 
 

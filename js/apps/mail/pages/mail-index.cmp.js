@@ -8,7 +8,7 @@ export default {
         <mail-nav-bar @filter="SetFilter"/>
     </div>
     <div v-if="mails" class="mail-list-container">
-<mail-list v-if="mails" :mails="mailsToDispley" />
+<mail-list @readed="readMail" @mailStarred="onMailStar" v-if="mails" :mails="mailsToDispley" />
     </div>
 </section>
 
@@ -27,8 +27,15 @@ export default {
         mailService._createMails().then(mails => this.mails = mails)
     },
     methods: {
+        readMail(id) {
+            mailService.readMail(id).then(res => mailService._createMails())
+
+        },
         SetFilter(str) {
             this.filterBy = str
+        },
+        onMailStar() {
+            mailService._createMails().then(mails => this.mails = mails)
         }
     },
     computed: {

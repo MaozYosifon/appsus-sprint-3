@@ -44,3 +44,13 @@ text-align: center;
     display: flex;
     flex-direction: column;
 }
+
+.nav-bar-content div:hover {
+cursor: pointer;
+}
+.yellow{
+    color: yellow;
+}
+.readed-mail{
+    background-color: rgba(175, 175, 175, 0.626);
+}
