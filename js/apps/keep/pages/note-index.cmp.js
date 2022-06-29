@@ -1,12 +1,12 @@
 import sideBar from '../cmps/side-bar.js'
-import notesContent from '../cmps/notes-content.js'
+import noteList from '../cmps/note-list.cmp.js'
 
 
 export default {
     template: `
         <section class="keep-note-container">
             <side-bar/>
-            <notes-content/>
+            <note-list/>
         </section>
     `,
     data() {
@@ -30,6 +30,6 @@ export default {
     },
     components: {
         sideBar,
-        notesContent,
+        noteList,
     },
 };
