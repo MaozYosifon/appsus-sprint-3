@@ -7,8 +7,8 @@ export default {
     <div @click.prevent="onSet('starred')">Starred</div>
     <div @click.prevent="onSet('sent')">sent mails</div>
     <div @click.prevent="onSet('drafts')">drafts</div>
+    <div @click.prevent="onSet('deleted')">Deleted</div>
     <div>%</div>
-    <i class="fa fa-trash" aria-hidden="true"></i>
 
  </section>
 `,

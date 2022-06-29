@@ -6,7 +6,7 @@ export default {
         
     <tbody>
         <tr v-for="mail in mails" :key="mail.id">
-    <mail-preview @click="setRead(mail)" @starred="onToggleStar" :mail="mail"/>
+    <mail-preview @fullyDelete="fullDelete" @remove="deleteMail" @click="setRead(mail)" @starred="onToggleStar" :mail="mail"/>
         </tr>
     </tbody>
     </section>
@@ -21,6 +21,12 @@ export default {
     },
     created() { },
     methods: {
+        fullDelete(mail) {
+            this.$emit('fullyDeleted', mail)
+        },
+        deleteMail(mail) {
+            this.$emit('deleted', mail)
+        },
         setRead(mail) {
             this.$emit('readed', mail.id)
         },

@@ -1,16 +1,15 @@
 export default {
     template: `
-    <td  class="mail" :class="isRead" >
-        <div @click="setStar" ><i :class="{yellow : mail.isStarred} " class="fas fa-star"></i></div>
-        <router-link :to="'/mail/'+mail.id">
+        <!-- <router-link :to="'/mail/'+mail.id"> -->
+    <td @click="move(mail.id)" class="mail" :class="isRead" >
+        <div @click.stop="setStar" ><i :class="{yellow : mail.isStarred} " class="fas fa-star"></i></div>
             <div>{{mail.subject}}</div>
             <div>{{lessText}}</div>
             <div>{{mail.sentAt}}</div>
-        </router-link>|
-        <div>BTN remove</div>
-        <div>BTN </div>
-        <h3>all should link</h3>
-</td>
+            <div @click.stop="onRemove(mail)"><i class="fa fa-trash" aria-hidden="true"></i></div>
+            <div @click.stop>BTN </div>
+        </td>
+    <!-- </router-link>| -->
 `, props: ['mail'],
     data() {
         return {};
@@ -18,6 +17,19 @@ export default {
     created() {
     },
     methods: {
+        onRemove(mail) {
+            if (mail.status != 'deleted') {
+                this.$emit('remove', mail);
+            } else {
+                this.$emit('fullyDelete', mail)
+            }
+        },
+        move(id) {
+            this.$router.push(`/mail/${id}`);
+        },
+        check() {
+            console.log('asd');
+        },
         setStar() {
             this.mail.isStarred =
                 console.log(this.mail);
