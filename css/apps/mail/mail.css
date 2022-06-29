@@ -1,0 +1,46 @@
+
+.mail-main-container{
+    justify-content: flex-start;
+    flex-direction: row;
+}
+
+.nav-bar-content{
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.nav-bar-container{
+    height:77vh;
+    width: 10rem;
+    border-right: 1px solid black;
+
+}
+
+.nav-bar-content div{
+    font-size: 20px;
+text-align: center;  
+  width: 100%;
+    box-shadow: 0px 2px 4px 2px grey;
+}
+.mail {
+    border: 1px solid black;
+    gap: 10px;
+    display: flex;
+    flex-direction: row;
+}
+.mail a{
+    text-decoration: none;
+    color: black;
+
+}
+.mail div{
+    /* width: 7rem; */
+    border-right: 0.3px solid black;
+}
+
+.mail-list{
+    display: flex;
+    flex-direction: column;
+}
