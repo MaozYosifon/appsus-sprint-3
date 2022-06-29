@@ -1,12 +1,50 @@
+import mailNavBar from "../cmps/mail-nav-bar.cmp.js";
+import { mailService } from "../services/mail.services.js"
+import mailList from "../cmps/mail-list.cmp.js";
 export default {
     template: `
- <h1>mail pages</h1>
+<section  class="flex mail-main-container">
+    <div class="nav-bar-container">
+        <mail-nav-bar @filter="SetFilter"/>
+    </div>
+    <div v-if="mails" class="mail-list-container">
+<mail-list v-if="mails" :mails="mailsToDispley" />
+    </div>
+</section>
+
 `,
-    data() {
-        return {};
+    components: {
+        mailNavBar,
+        mailList,
     },
-    created() { },
-    methods: {},
-    computed: {},
+    data() {
+        return {
+            mails: null,
+            filterBy: null,
+        };
+    },
+    created() {
+        mailService._createMails().then(mails => this.mails = mails)
+    },
+    methods: {
+        SetFilter(str) {
+            this.filterBy = str
+        }
+    },
+    computed: {
+        mailsToDispley() {
+            if (this.filterBy === null) return this.mails
+            if (this.filterBy === 'inbox') {
+                return this.mails.filter((mail) => {
+                    return mail.status === this.filterBy
+                })
+            } else if (this.filterBy === 'starred') {
+                return this.mails.filter((mail) => {
+                    return mail.isStarred === true
+                })
+            }
+            console.log(this.mails);
+        }
+    },
     unmounted() { },
 };
