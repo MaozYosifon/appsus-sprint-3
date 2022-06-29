@@ -1,6 +1,6 @@
 export default {
   template: `
- <header class="app-header">
+ <header class="header-layout flex space-between align-items">
     <div class="logo">
         <h3>Appsus</h3>
     </div>

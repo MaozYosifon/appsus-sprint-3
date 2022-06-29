@@ -1,14 +1,17 @@
-/* SETUP  */
-/* @import 'setup/vars.css'; */
 
-/* BASE */
-/* @import 'basic/base.css'; */
-/* @import 'basic/layout.css'; */
-/* @import 'basic/helpers.css'; */
+    /* Main Pages Layouts */
+@import '/css/apps/cmps/app-home.css';
 
-/* COMPONENTS */
-/* @import 'components/app-header.css'; */
-/* @import 'components/app-footer.css'; */
-/* @import 'components/user-msg.css'; */
-/* Media Queries */
-/* @import 'mq/mq.css'; */
+/* user-msg.css */
+@import '/css/apps/cmps/user-msg.css';
+
+/* keep CSS */
+@import '/css/apps/keep/note-preview.css';
+
+/* mail CSS */
+@import '/css/apps/mail/mail.css';
+
+/* parts */
+@import '/css/apps/parts/helpers.css';
+@import '/css/apps/parts/fonts.css';
+@import '/css/apps/parts/base.css';
