@@ -1,7 +1,10 @@
 export default {
     props: ['note'],
     template: `
-       <h1>bbb</h1>
+    <section class="note-preview">
+        <!-- <pre>{{note}}</pre> -->
+        <p>{{note.id}}</p>
+    </section>
     `,
     data() {
         return {
@@ -15,3 +18,12 @@ export default {
     components: {
     }
 };
+
+// {
+//     "id": "n101",
+//     "type": "note-txt",
+//     "isPinned": true,
+//     "info": {
+//       "txt": "Fullstack Me Baby!"
+//     }
+//   }
