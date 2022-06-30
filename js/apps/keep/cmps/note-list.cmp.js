@@ -1,5 +1,4 @@
 import { noteService } from '../services/note-services.js'
-import noteTxt from '../cmps/note-txt.js'
 import notePreview from './note-preview.cmp.js'
 
 export default {
@@ -11,13 +10,10 @@ export default {
             
         </div>
 
-        <!-- <note-preview :note="note" /> -->
-    
+        
         <section v-if="notes" class="note-list">
-            <div v-for="(note,idx) in notes" :key="note.id" class="note-preview-container" >
-                <component :is="note.type"  
-                    :info="note.info">
-                </component>
+            <div v-for="note in notes" :key="note.id">
+                <note-preview :note="note" />
             </div>
         </section>
     </section>
@@ -43,7 +39,7 @@ export default {
     computed: {},
     unmounted() { },
     components: {
-        noteTxt,
+        // noteTxt,
         notePreview,
     }
 };

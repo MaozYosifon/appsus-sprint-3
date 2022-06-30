@@ -45,33 +45,46 @@ function _createNotes() {
                 type: "note-txt",
                 isPinned: true,
                 info: {
+                    title: "WTF ",
                     txt: "Fullstack Me Baby!"
                 }
             },
-            // {
-            //     id: "n102",
-            //     type: "note-img",
-            //     isPinned: false,
-            //     info: {
-            //         url: "http://some-img/me",
-            //         title: "Bobi and Me"
-            //     },
-            //     style: {
-            //         backgroundColor: "#00d"
-            //     }
-            // },
-            // {
-            //     id: "n103",
-            //     type: "note-todos",
-            //     isPinned: false,
-            //     info: {
-            //         label: "Get my stuff together",
-            /////////         todos: [
-            //             { txt: "Driving liscence", doneAt: null },
-            //             { txt: "Coding power", doneAt: 187111111 }
-            //         ]
-            //     }
-            // }
+            {
+                id: "n102",
+                type: "note-img",
+                isPinned: false,
+                info: {
+                    url: "https://www.media.hw-static.com/media/2016/10/borat-20th-century-fox-103116.jpg",
+                    title: "Bobi and Me"
+                },
+                style: {
+                    backgroundColor: "#00d"
+                }
+            },
+            {
+                id: "n103",
+                type: "note-video",
+                isPinned: false,
+                info: {
+                    url: "https://www.youtube.com/embed/RS7trxkb0zE",
+                    title: "Bobi and Me"
+                },
+                style: {
+                    backgroundColor: "#00d"
+                }
+            },
+            {
+                id: "n104",
+                type: "note-todos",
+                isPinned: false,
+                info: {
+                    title: "Get my stuff together",
+                    todos: [
+                        { txt: "Driving liscence", doneAt: null },
+                        { txt: "Coding power", doneAt: 187111111 }
+                    ]
+                }
+            }
         ];
 
         utiStorageService.saveToStorage(NOTES_KEY, notes);
