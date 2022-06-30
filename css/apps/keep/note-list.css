@@ -3,3 +3,29 @@
     flex-wrap: wrap;
     gap:1em;
 }
+
+.note-input-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.note-input-container .note-input {
+    opacity: 1;
+}
+
+.note-input-container .note-type-btn:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+
+.note-input-container .note-type-btn{
+    top: .6em;
+    right: 4.5em;
+    display: flex;
+    gap: 5px;
+    height: 1em;
+    position: relative;
+    opacity: 1;
+    cursor: pointer;
+}

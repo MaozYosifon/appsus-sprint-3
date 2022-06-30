@@ -19,16 +19,11 @@ export default {
             info: null
         };
     },
-    created() {
-        console.log('preview page');
-    },
     methods: {
         changeColor() {
             this.note.style.backgroundColor = 'red';
         }
     },
-    computed: {},
-    unmounted() { },
     components: {
         noteTxt,
         noteImg,
@@ -37,12 +32,3 @@ export default {
         noteEdit,
     }
 };
-
-// {
-//     "id": "n101",
-//     "type": "note-txt",
-//     "isPinned": true,
-//     "info": {
-//       "txt": "Fullstack Me Baby!"
-//     }
-//   }

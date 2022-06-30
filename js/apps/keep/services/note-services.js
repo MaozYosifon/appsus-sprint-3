@@ -36,6 +36,10 @@ function save(note) {
     else return storageService.post(NOTES_KEY, note)
 }
 
+function addNote(note) {
+    return storageService.post(NOTES_KEY, note)
+}
+
 function _createNotes() {
     let notes = utiStorageService.loadFromStorage(NOTES_KEY);
     if (!notes || !notes.length) {

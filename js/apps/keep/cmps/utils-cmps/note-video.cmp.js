@@ -7,17 +7,4 @@ export default {
         </section>
     `,
     props: ['info'],
-    data() {
-        return {
-        };
-    },
-    methods: {
-        toggleDone() { },
-    },
-    computed: {
-    },
-    created() {
-        // console.log(this.info.url);
-        console.log('note-video-page');
-    },
 }

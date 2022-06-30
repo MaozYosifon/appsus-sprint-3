@@ -24,8 +24,4 @@ export default {
             return { 'done': this.isDone }
         }
     },
-    created() {
-        console.log(this.info);
-        console.log('note-image-page');
-    },
 }
