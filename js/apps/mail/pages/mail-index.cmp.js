@@ -1,24 +1,29 @@
 import mailNavBar from "../cmps/mail-nav-bar.cmp.js";
 import { mailService } from "../services/mail.services.js"
 import mailList from "../cmps/mail-list.cmp.js";
+import mailCompose from "../cmps/mail-compose.cmp.js";
+
 export default {
     template: `
 <section  class="flex mail-main-container">
     <div class="nav-bar-container">
-        <mail-nav-bar @filter="SetFilter"/>
+        <mail-nav-bar @composing="onCompose" :mails="mails" @filter="SetFilter"/>
     </div>
     <div v-if="mails" class="mail-list-container">
 <mail-list @fullyDeleted="onFullyDeleted" @deleted="deletedMail" @readed="readMail" @mailStarred="onMailStar" v-if="mails" :mails="mailsToDispley" />
     </div>
+    <mail-compose @sent="sendMail" @closeCompose="onComposeClose" v-if="isComposing" />
 </section>
 
 `,
     components: {
         mailNavBar,
         mailList,
+        mailCompose,
     },
     data() {
         return {
+            isComposing: false,
             mails: null,
             filterBy: 'inbox',
         };
@@ -27,6 +32,20 @@ export default {
         mailService._createMails().then(mails => this.mails = mails)
     },
     methods: {
+        sendMail(mail) {
+            this.onComposeClose
+            mailService._sendMail(mail).then(mails => this.mails = mails)
+
+        },
+        onComposeClose() {
+            console.log('im closing');
+            this.isComposing = false
+        },
+        onCompose() {
+            console.log('asd')
+            this.isComposing = true
+            console.log(this.isComposing);
+        },
         onFullyDeleted(mail) {
             console.log(mail.id);
             mailService.remove(mail.id)
@@ -68,6 +87,12 @@ export default {
                     return mail.status === this.filterBy
                 })
             }
+            else if (this.filterBy === 'sent') {
+                return this.mails.filter((mail) => {
+                    return mail.status === this.filterBy
+                })
+            }
+
             console.log(this.mails);
         }
     },

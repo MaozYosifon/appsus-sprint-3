@@ -10,7 +10,8 @@ export const mailService = {
     toggleStar,
     remove,
     saveMail,
-    readMail
+    readMail,
+    _sendMail
 }
 
 export const loggedinUser = {
@@ -32,6 +33,13 @@ function getMail(mailId) {
 
 function query() {
     return storageService.query(MAILS_KEY);
+}
+
+function _sendMail(mail) {
+    mail.id = utilService.makeId;
+    mail.sentAt = new Date().toISOString().slice(0, 10),
+        saveMail(mail);
+    return query()
 }
 
 function toggleRead(mailId) {
@@ -77,6 +85,10 @@ function deleteMail(mailId) {
         })
 }
 
+function randomDate(start, end) {
+    return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
+}
+
 
 
 function _createMails() {
@@ -92,29 +104,78 @@ function _createMails() {
                     isRead: false,
                     isStarred: true,
                     isSent: false,
-                    sentAt: 1611237578675,
+                    sentAt: '30 - 06 - 2012',
                     to: 'momo@momo.com',
                     from: 'Unknown'
                 }, {
                     id: utilService.makeId(),
                     status: 'inbox',
-                    subject: 'ASAP!!',
-                    body: 'https://www.youtube.com/watch?v=j7gKwxRe7MQ',
+                    subject: 'Read ME',
+                    body: 'Alright you can read',
                     isRead: true,
                     isStarred: false,
                     isSent: false,
-                    sentAt: 1611237578675,
+                    sentAt: '17 - 09 - 2020',
                     to: 'momo@momo.com',
-                    from: 'Unknown'
-                }, {
+                    from: 'SPAM'
+                },
+                {
                     id: utilService.makeId(),
                     status: 'inbox',
-                    subject: 'ASAP!!',
-                    body: 'https://www.youtube.com/watch?v=j7gKwxRe7MQ',
+                    subject: 'New Car',
+                    body: 'New car ready for you to pick up at @#!@#!@#! , We are wating',
                     isRead: false,
                     isStarred: true,
                     isSent: false,
-                    sentAt: 1611237578675,
+                    sentAt: '29 - 06 - 2022',
+                    to: 'momo@momo.com',
+                    from: 'Unknown'
+                },
+                {
+                    id: utilService.makeId(),
+                    status: 'inbox',
+                    subject: 'Verify your account',
+                    body: 'Click here to verify your account',
+                    isRead: false,
+                    isStarred: true,
+                    isSent: false,
+                    sentAt: '28 - 06 - 2022',
+                    to: 'momo@momo.com',
+                    from: 'Unknown'
+                },
+                {
+                    id: utilService.makeId(),
+                    status: 'inbox',
+                    subject: 'Billing Recipt',
+                    body: 'Your recipt is ready to receive',
+                    isRead: false,
+                    isStarred: true,
+                    isSent: false,
+                    sentAt: ' 27 - 06 - 2022',
+                    to: 'momo@momo.com',
+                    from: 'Unknown'
+                },
+                {
+                    id: utilService.makeId(),
+                    status: 'inbox',
+                    subject: 'New Car',
+                    body: 'New car ready for you to pick up at @#!@#!@#! , We are wating',
+                    isRead: false,
+                    isStarred: true,
+                    isSent: false,
+                    sentAt: '26 - 06 - 2022',
+                    to: 'momo@momo.com',
+                    from: 'Unknown'
+                },
+                {
+                    id: utilService.makeId(),
+                    status: 'inbox',
+                    subject: 'New Car',
+                    body: 'New car ready for you to pick up at @#!@#!@#! , We are wating',
+                    isRead: false,
+                    isStarred: true,
+                    isSent: false,
+                    sentAt: '25 - 06 - 2022',
                     to: 'momo@momo.com',
                     from: 'Unknown'
                 },
