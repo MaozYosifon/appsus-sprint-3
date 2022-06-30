@@ -7,7 +7,7 @@ export default {
         <header>sender: {{mail.from}} <span>At : {{mail.sentAt}}</span></header>
         <div  v-if="trollMode">  <a :href="fixedTroll">click Here</a></div>
         <div v-else>{{mail.body}}</div>
-        <button><router-link  to="/mail">Back</router-link></button>
+        <button @click="$router.push('/mail')">Back</button>
     </section>
 `,
     data() {
