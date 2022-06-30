@@ -2,6 +2,7 @@
 export default {
     template: `
  <section class="flex nav-bar-content">
+    <div class="search-input"><input @input="onFilter" v-model="txt" type="text"></div>
     <button @click="onCompose">Compose +</button>
     <div @click.prevent="onSet('inbox')"><i class="fa-solid fa-inbox"></i>&nbspInbox</div>
     <div @click.prevent="onSet('starred')"><i class="fa-solid fa-star"></i>&nbspStarred</div>
@@ -13,10 +14,15 @@ export default {
  </section>
 `, props: ['mails'],
     data() {
-        return {};
+        return {
+            txt: null
+        };
     },
     created() { },
     methods: {
+        onFilter() {
+            this.$emit('txtFiltering', this.txt)
+        },
         onCompose() {
             this.$emit('composing');
 

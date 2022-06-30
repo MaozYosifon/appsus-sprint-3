@@ -19,7 +19,7 @@ body {
     border-bottom: 1px solid rgba(151, 151, 151, 0.767);
     justify-content: center;
     align-items: center;
-    margin-bottom: 1em;
+    /* margin-bottom: 1em; */
 }
 
 .nav-bar{

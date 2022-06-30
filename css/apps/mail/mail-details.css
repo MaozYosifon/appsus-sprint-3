@@ -1,0 +1,60 @@
+
+.mail-details{
+    display: flex;
+    height: 83vh;
+    flex-direction:column;
+    background-color: rgba(178, 178, 178, 0.467);
+    
+}
+
+.mail-details .details-header{
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 30px;
+    width: 250px;
+    height: 70px;
+    padding-left: 20px;
+    /* background-color: aqua; */
+}
+.details-body{
+    position: relative;
+    justify-self: center;
+    align-self: center;
+    background-color: rgba(178, 178, 178, 0.66);
+    width: 80%;
+    border-radius: 60px;
+    line-height: 50px;
+    height: 40%;
+    margin-top: 30px;
+    font-size: 20px;
+    padding-left: 40px;
+}
+.details-body .lalala {
+    color:blue;
+    text-decoration: underline;
+    line-height: 250px;
+    padding-left: 200px;
+    position: relative;
+    justify-self: center;
+font-size: 100px;
+align-self: center;
+text-align: center;
+}
+
+.mail-details .details-return-btn{
+    position: relative;
+    left: 89%;
+    bottom: 45%;
+    /* top: 90%; */
+    /* size: 60px;
+    width: 50px;
+    height: 50px;
+    align-self: center; */
+}
+
+.mail-details .details-return-btn .return-btn{
+    font-size: 30px;
+}
+
+
+

@@ -7,7 +7,7 @@ export default {
             <div class="mail-body">{{lessText}}</div>
             <div class="mail-date">{{mail.sentAt}}</div>
             <div class="mail-trash" @click.stop="onRemove(mail)"><i class="fa fa-trash" aria-hidden="true"></i></div>
-            <div class="mail-label" @click.stop>label </div>
+            <!-- <div class="mail-label" @click.stop>label </div> -->
         </td>
     <!-- </router-link>| -->
 `, props: ['mail'],
