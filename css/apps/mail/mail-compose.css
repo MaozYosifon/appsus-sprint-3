@@ -1,0 +1,111 @@
+
+.email-compose {
+    background-color: white;
+    width: 450px;
+    height: 500px;
+    position: fixed;
+    bottom: 0;
+    right: 6%;
+    box-shadow: 0 0 2px black;
+    border-radius:4px;
+    z-index:2;
+}
+
+.email-compose .compose-nav{
+   text-align:end;
+    background-color:rgb(63, 63, 63);
+    padding: 8px 5px;
+}
+
+.email-compose .mobile-compose-nav{
+    background-color:rgb(109, 162, 227);
+    padding: 14px 8px;
+    display: none;
+    justify-content: space-between;
+    height: 65px;
+}
+
+.email-compose .mobile-compose-nav button{
+    background-color:unset;
+    font-size: 20px;
+    border:none;
+    cursor: pointer;
+}
+
+.email-compose .mobile-compose-nav button:hover{
+    color:whitesmoke;
+ }
+
+.close-compose{
+    color:lightgray;
+    background-color:unset;
+    font-size: 20px;
+    border:none;
+    cursor: pointer;
+}
+
+.close-compose:hover{
+   background-color: rgb(97, 97, 97);
+   color:whitesmoke;
+}
+
+.email-compose form {
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.email-compose form span {
+    padding: 10px;
+    color:gray;
+    border: dashed lightgray;
+    border-width: 0 0 1px 0;
+}
+
+.reply-body {
+    color:gray;
+    border: none;  
+    outline: none;
+    padding: 5px 0;
+}
+
+.reply-body span {
+    color:gray;
+    border: dashed lightgray;
+    border-width: 0 0 1px 0;
+}
+
+.email-compose input {
+    border: solid gray;
+    border-width: 0 0 1px 0;
+    padding: 6px 10px;
+    font-size: 18px;
+    outline: none;
+}
+
+.email-compose .compose-body {
+    /* height: 100%; */
+    padding: 8px 14px;
+    font-family: 'Roboto', sans-serif;
+    border: none;  
+    outline: none;
+}
+
+.email-compose .send-email {
+    cursor: pointer;
+    position: absolute;
+    background-color: rgb(57, 59, 63);
+    border: 1px solid black;
+    font-size: 18px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    bottom: 10px;
+    color: white;
+}
+
+.email-compose .send-email:hover {
+ box-shadow:  0 1px 2px rgba(60, 60, 255, 0.555);
+ /* padding: 7px 11px; */
+ /* border:2px solid black; */
+}

@@ -1,0 +1,36 @@
+.mail .star{
+    width: 50px;
+}
+.mail .mail-subject{
+    width:150px;
+    text-align: center;
+    justify-self: center;
+    padding: 0px 10px
+}
+.mail .mail-body{
+width: 60%;
+}
+.mail .mail-date{
+    text-align: center;
+    padding-right: 15px;
+}
+.mail .mail-trash{
+    text-align: center;
+    padding-right: 15px;
+
+}
+.mail .mail-label{
+    width:30px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    /* padding-right: 15px; */
+
+}
+.mail .mail-label select{
+    
+    width: 15px;
+border-radius: 50%;
+}
+
+

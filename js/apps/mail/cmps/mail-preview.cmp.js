@@ -2,12 +2,12 @@ export default {
     template: `
         <!-- <router-link :to="'/mail/'+mail.id"> -->
     <td @click="move(mail.id)" class="mail" :class="isRead" >
-        <div @click.stop="setStar" ><i :class="{yellow : mail.isStarred} " class="fas fa-star"></i></div>
-            <div>{{mail.subject}}</div>
-            <div>{{lessText}}</div>
-            <div>{{mail.sentAt}}</div>
-            <div @click.stop="onRemove(mail)"><i class="fa fa-trash" aria-hidden="true"></i></div>
-            <div @click.stop>BTN </div>
+        <div class="star" @click.stop="setStar" ><i :class="isStar"></i></div>
+            <div class="mail-subject">{{mail.subject}}</div>
+            <div class="mail-body">{{lessText}}</div>
+            <div class="mail-date">{{mail.sentAt}}</div>
+            <div class="mail-trash" @click.stop="onRemove(mail)"><i class="fa fa-trash" aria-hidden="true"></i></div>
+            <div class="mail-label" @click.stop>label </div>
         </td>
     <!-- </router-link>| -->
 `, props: ['mail'],
@@ -37,14 +37,17 @@ export default {
         }
     },
     computed: {
+
         isStar() {
-            return {}
+            if (this.mail.isStarred) {
+                return "fas fa-star yellow"
+            } else return "far fa-star"
         },
         isRead() {
             return { 'readed-mail': this.mail.isRead }
         },
         lessText() {
-            const lessTxt = this.mail.body.substring(0, 30).concat('...')
+            const lessTxt = this.mail.body.substring(0, 40).concat('...')
             return lessTxt
         }
     },

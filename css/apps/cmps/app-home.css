@@ -6,6 +6,10 @@ body {
     line-height: 1.2065;
 }
 
+.logo h3:hover{
+    cursor: pointer;
+
+}
 .header-layout{
     height: 10vh;
     width: 100%;

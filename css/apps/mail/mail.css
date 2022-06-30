@@ -15,30 +15,55 @@
     height:77vh;
     width: 10rem;
     border-right: 1px solid black;
-
+    
 }
 
 .nav-bar-content div{
     font-size: 20px;
 text-align: center;  
+margin-right: 0.5px;
   width: 100%;
+  height: 30px;
+  border-top-right-radius: 3rem;
+  border-bottom-right-radius: 3rem;
+
+  /* border-bottom: 0.5px solid grey; */
+    /* box-shadow: 0px 2px 4px 2px grey; */
+}
+.nav-bar-content button{
+    /* size: 40px; */
+    height: 30px;
+    width: 100px;
+    border-radius: 10px;
+    border:none;
+    border-bottom: 0.5px solid grey;
+    
+}
+.nav-bar-content button:hover{
+    cursor: pointer;
     box-shadow: 0px 2px 4px 2px grey;
 }
+
 .mail {
-    border: 1px solid black;
+    /* border: 1px solid black; */
+    border-bottom: 1px solid black;
     display: flex;
-    align-content: center;
+    align-items: center;
     flex-direction: row;
     justify-content: space-between;
+}
+.mail:first-child{
+    border-top: 1px solid grey;
 }
 .mail a{
     text-decoration: none;
     color: black;
 
 }
+
 .mail div{
     /* width: 7rem; */
-    width: 100%;
+    /* width: 100%; */
     text-align: center;
     border-right: 0.3px solid black;
 }
@@ -52,13 +77,16 @@ a{
     flex-direction: column;
 }
 .mail-list-container{
-    width:100%
+    width:85%
+}
+.mail:hover{
+    cursor: pointer;
 }
 .mail-list-container tbody{
 display: flex;
 flex-direction: column;
 justify-content: space-evenly;
-gap: 1px;
+/* gap: 1px; */
 }
 .mail-list-container td{
 height:30px
@@ -66,10 +94,12 @@ height:30px
 
 .nav-bar-content div:hover {
 cursor: pointer;
+background-color: rgba(211, 211, 211, 0.492);
+
 }
 .yellow{
-    color: yellow;
+    color: rgb(229, 191, 77,1);
 }
 .readed-mail{
-    background-color: rgba(175, 175, 175, 0.626);
+    background-color: rgb(239, 240, 240);
 }
