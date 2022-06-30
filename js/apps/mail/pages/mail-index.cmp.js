@@ -2,6 +2,7 @@ import mailNavBar from "../cmps/mail-nav-bar.cmp.js";
 import { mailService } from "../services/mail.services.js"
 import mailList from "../cmps/mail-list.cmp.js";
 import mailCompose from "../cmps/mail-compose.cmp.js";
+// import { showSuccessMsg, showErrorMsg } from "../../../services/eventBus-service.js";
 
 export default {
     template: `
@@ -42,7 +43,9 @@ export default {
         },
         sendMail(mail) {
             this.onComposeClose
-            mailService._sendMail(mail).then(mails => this.mails = mails)
+            mailService._sendMail(mail).then(mails => {
+                this.mails = mails
+            })
 
         },
         onComposeClose() {

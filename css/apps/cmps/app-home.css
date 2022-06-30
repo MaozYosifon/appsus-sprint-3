@@ -1,10 +1,10 @@
 /* Header */
 
 body {
-    margin: 0;
+    margin: 0 auto;
     font-size: 1rem;
     line-height: 1.2065;
-    background-color: rgba(128, 128, 128, 0.055);
+    background-color: rgba(128, 128, 128, 0.045);
 
 }
 
@@ -50,4 +50,75 @@ background-image: linear-gradient(to right bottom, #e1ecec, #d2dddf, #c4cfd3, #b
 
 .about-page{
     height: 84.6vh;
+    background-image: linear-gradient(to right bottom, #e1ecec, #d2dddf, #c4cfd3, #b7c0c6, #aab2b9, #a1afba, #97abbb, #8da8bc, #7bb0c7, #64b9cc, #4ac1cb, #34c9c2);
+
+} 
+.about-page-content{
+    display: flex;
+    justify-content:center;
+    flex-wrap: wrap;
+}
+
+.home-page-content .mail-img{
+    position: absolute;
+    width: 150px;
+    top: 150px;
+    left:150px
+}
+.home-page-content .mail-img:hover{
+    cursor: pointer;
+}
+
+.home-page-content .keep-img{
+    width: 150px;
+    position:absolute;
+    right: 150px;
+    top: 150px;
+}
+.home-page-content .keep-img:hover{
+    cursor: pointer;
+}
+
+.home-icon-img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 300px;
+}
+.home-page-mail-container .home-page-mail-header{
+    position: absolute;
+    width: 400px;
+    top: 100px;
+    left:50px
+}
+.home-page-note-container .home-page-note-header{
+
+    width: 400px;
+    position:absolute;
+    right: 0px;
+    top: 100px;
+}
+
+
+/* HEADER */
+
+.logo{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo .logo-img{
+    width: 80px
+}
+
+.logo .logo-head{
+    font-size: 30px;
+    font-weight:200;
+    font-family: 'Times New Roman', Times, serif;
+}
+.logo .logo-img:hover{
+    cursor: pointer;
 }
