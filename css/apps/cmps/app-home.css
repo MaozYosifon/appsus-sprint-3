@@ -4,6 +4,8 @@ body {
     margin: 0;
     font-size: 1rem;
     line-height: 1.2065;
+    background-color: rgba(128, 128, 128, 0.055);
+
 }
 
 .logo h3:hover{
@@ -19,7 +21,7 @@ body {
     border-bottom: 1px solid rgba(151, 151, 151, 0.767);
     justify-content: center;
     align-items: center;
-    /* margin-bottom: 1em; */
+    /* margin-bottom: -1em; */
 }
 
 .nav-bar{
@@ -39,4 +41,13 @@ body {
 
 .logo{
     margin-left: 0.8rem;
+}
+
+.home-page{
+height: 84.6vh;
+background-image: linear-gradient(to right bottom, #e1ecec, #d2dddf, #c4cfd3, #b7c0c6, #aab2b9, #a1afba, #97abbb, #8da8bc, #7bb0c7, #64b9cc, #4ac1cb, #34c9c2);
+}
+
+.about-page{
+    height: 84.6vh;
 }

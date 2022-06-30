@@ -56,11 +56,15 @@ justify-self: center;
 
 .mail {
     /* border: 1px solid black; */
-    border-bottom: 1px solid black;
+    /* border-bottom: 1px solid black; */
     display: flex;
     align-items: center;
     flex-direction: row;
     justify-content: space-between;
+}
+.mail-list:last-child{
+    border-bottom: 1px solid grey;
+
 }
 .mail:first-child{
     border-top: 1px solid grey;
@@ -75,7 +79,7 @@ justify-self: center;
     /* width: 7rem; */
     /* width: 100%; */
     text-align: center;
-    border-right: 0.3px solid black;
+    /* border-right: 0.3px solid black; */
 }
 
 a{
@@ -101,7 +105,8 @@ justify-content: space-evenly;
 /* gap: 1px; */
 }
 .mail-list-container td{
-height:30px
+height:50px;
+
 }
 /* .mail:hover{
     box-shadow: inset 0px 0px 3px 0px;
@@ -117,5 +122,5 @@ background-color: rgb(211 211 211 / 40%);
     color: rgb(229, 191, 77,1);
 }
 .readed-mail{
-    background-color: rgb(218, 220, 220);
+    background-color: rgba(214, 213, 213, 0.576);
 }

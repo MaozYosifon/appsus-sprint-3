@@ -2,8 +2,10 @@ import { eventBus } from "../services/eventBus-service.js";
 
 export default {
     template: `
- <section class="about-page app-main">
-    <h3>This is an about page</h3>
+ <section class="about-page ">
+    <section class="about-page-content">
+    
+    </section>
  </section>
 `,
     data() {

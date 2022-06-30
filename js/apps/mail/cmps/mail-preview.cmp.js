@@ -2,11 +2,11 @@ export default {
     template: `
         <!-- <router-link :to="'/mail/'+mail.id"> -->
     <td @click="move(mail.id)" class="mail" :class="isRead" >
-        <div class="star" @click.stop="setStar" ><i :class="isStar"></i></div>
-            <div class="mail-subject">{{mail.subject}}</div>
-            <div class="mail-body">{{lessText}}</div>
-            <div class="mail-date">{{mail.sentAt}}</div>
-            <div class="mail-trash" @click.stop="onRemove(mail)"><i class="fa fa-trash" aria-hidden="true"></i></div>
+        <div class="star" @click.stop="setStar" ><i :title="isStarred" :class="isStar"></i></div>
+            <div title="Subject" class="mail-subject">{{mail.subject}}</div>
+            <div title="Mail Content" class="mail-body">{{lessText}}</div>
+            <div title="Sent At" class="mail-date">{{mail.sentAt}}</div>
+            <div class="mail-trash" @click.stop="onRemove(mail)"><i title="Delete" class="fa fa-trash" aria-hidden="true"></i></div>
             <!-- <div class="mail-label" @click.stop>label </div> -->
         </td>
     <!-- </router-link>| -->
@@ -27,9 +27,6 @@ export default {
         move(id) {
             this.$router.push(`/mail/${id}`);
         },
-        check() {
-            console.log('asd');
-        },
         setStar() {
             this.mail.isStarred =
                 console.log(this.mail);
@@ -37,7 +34,10 @@ export default {
         }
     },
     computed: {
-
+        isStarred() {
+            if (this.mail.isStarred) return 'UnStar'
+            else return 'Star'
+        },
         isStar() {
             if (this.mail.isStarred) {
                 return "fas fa-star yellow"
