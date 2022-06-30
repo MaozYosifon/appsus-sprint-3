@@ -2,7 +2,6 @@ export default {
     props: ['note'],
     template: `
     <section class="note-preview">
-        <!-- <pre>{{note}}</pre> -->
         <p>{{note.id}}</p>
     </section>
     `,

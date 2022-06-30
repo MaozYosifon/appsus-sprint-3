@@ -1,20 +1,25 @@
 import { noteService } from '../services/note-services.js'
-// import noteTxt from '../cmps/note-txt.js'
+import noteTxt from '../cmps/note-txt.js'
 import notePreview from './note-preview.cmp.js'
 
 export default {
     template: `
     <section class="main-notes-section">
-            <div class="note-text-area">
-                <input type="text" placeholder="Take a note">
-                <form @submit.prevent="onNoteSave"></form>
-            </div>
+        <div class="note-text-area">
+            <input type="text" placeholder="Take a note">
+            <form @submit.prevent="onNoteSave"></form>
+            
+        </div>
 
-            <section class="note-list">
-                    <div v-if="notes" v-for="note in notes" :key="note.id" class="note-preview-container" >
-                        <note-preview :note="note" />
-                    </div>
-            </section>
+        <!-- <note-preview :note="note" /> -->
+    
+        <section v-if="notes" class="note-list">
+            <div v-for="(note,idx) in notes" :key="note.id" class="note-preview-container" >
+                <component :is="note.type"  
+                    :info="note.info">
+                </component>
+            </div>
+        </section>
     </section>
     `,
     data() {
@@ -28,6 +33,7 @@ export default {
                 console.log(notes);
                 this.notes = notes
             })
+
     },
     methods: {
         onNoteSave() {
@@ -37,6 +43,7 @@ export default {
     computed: {},
     unmounted() { },
     components: {
+        noteTxt,
         notePreview,
     }
 };
