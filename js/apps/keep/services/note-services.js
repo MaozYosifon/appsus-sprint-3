@@ -10,7 +10,7 @@ export const noteService = {
     query,
     remove,
     save,
-    get,
+    get, addNote,
 };
 
 //gets all the notes
@@ -62,7 +62,7 @@ function _createNotes() {
                     title: "Bobi and Me"
                 },
                 style: {
-                    backgroundColor: "#00d"
+                    backgroundColor: getRandomColor()
                 }
             },
             {
@@ -74,7 +74,7 @@ function _createNotes() {
                     title: "Bobi and Me"
                 },
                 style: {
-                    backgroundColor: "#00d"
+                    backgroundColor: getRandomColor()
                 }
             },
             {
@@ -107,7 +107,7 @@ function _createNotes() {
                     title: "Bobi and Me"
                 },
                 style: {
-                    backgroundColor: "#00d"
+                    backgroundColor: getRandomColor()
                 }
             },
             {
@@ -119,7 +119,7 @@ function _createNotes() {
                     title: "Bobi and Me"
                 },
                 style: {
-                    backgroundColor: "#00d"
+                    backgroundColor: getRandomColor()
                 }
             },
             {
@@ -138,8 +138,17 @@ function _createNotes() {
 
         utiStorageService.saveToStorage(NOTES_KEY, notes);
     }
+
+
     return notes;
 }
 
-
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
 

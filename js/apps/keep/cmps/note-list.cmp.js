@@ -1,16 +1,16 @@
-import { noteService } from '../services/note-services.js'
 import notePreview from './note-preview.cmp.js'
 import noteInputPreview from './note-input-preview.cmp.js'
 
 export default {
+    props: ['notes'],
     template: `
-    <section class="main-notes-section">
+    <section  class="main-notes-section">
 
         <section class="note-text-area">
-            <note-input-preview/> 
+            <note-input-preview @addingNote="addNote" /> 
         </section>
 
-        <section v-if="notes" class="note-list">
+        <section class="note-list">
             <div v-for="note in notes" :key="note.id">
                 <note-preview :note="note" />
             </div>
@@ -18,17 +18,15 @@ export default {
     </section>
     `,
     data() {
-        return {
-            notes: null
-        };
+        return {};
     },
-    created() {
-        noteService.query()
-            .then(notes => {
-                this.notes = notes
-            })
+    methods: {
+        addNote(note) {
+            this.$emit('addingNote', note)
+        },
 
     },
+    created() { },
     components: {
         noteInputPreview,
         notePreview,
