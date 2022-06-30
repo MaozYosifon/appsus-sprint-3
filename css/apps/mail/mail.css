@@ -91,7 +91,9 @@ a{
     flex-direction: column;
 }
 .mail-list-container{
-    width:85%
+    width:90%;
+    border-right: 1px solid black;
+    box-shadow: 1px -1px 7px 1px;
 }
 .mail:hover{
     cursor: pointer;
