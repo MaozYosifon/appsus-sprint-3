@@ -1,7 +1,7 @@
 
 export default {
     template: `
-        <section>
+        <section class="note-todos-container">
             <h4>{{info.title}}</h4>
             <ul  v-for="todo in info.todos" >
                 <li :class="onDone" @click="toggleDone">{{todo.txt}}</li>   

@@ -1,0 +1,29 @@
+.keep-note-container{
+    width: 100%;
+    display: flex;
+    text-align:center;
+}
+
+.note-text-area{
+    box-sizing: border-box;
+    text-align:center;
+    box-shadow: 10px;
+}
+
+.note-text-area input{
+    border-radius: 0.8rem;
+    width: 20em;
+    height: 30px;
+    box-shadow: 0px 0px 8px 1.5px rgba(66, 58, 58, 0.375);
+    font-size: 14px;
+    font-family: Roboto;
+    color: rgb(32, 33, 36);
+    padding-left: 16px;
+    margin-bottom: 2em;
+    border: none;    
+}
+
+.main-notes-section{
+    width: 80%;
+    margin-left: 2em;
+}
