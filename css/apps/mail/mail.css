@@ -2,13 +2,14 @@
 .mail-main-container{
     justify-content: flex-start;
     flex-direction: row;
+    margin-top: 20px;
 }
 
 .nav-bar-content{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 2px;
+    gap: 6px;
 }
 
 .nav-bar-container{
@@ -38,6 +39,14 @@ margin-right: 0.5px;
     border:none;
     border-bottom: 0.5px solid grey;
     
+}
+.nav-bar-content .search-input{
+align-self: center;  
+justify-self: center;
+  /* width: 10px; */
+}
+.nav-bar-content .search-input input{
+    width: 50%;
 }
 .nav-bar-content button:hover{
     cursor: pointer;

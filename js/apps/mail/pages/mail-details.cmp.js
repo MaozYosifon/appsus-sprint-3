@@ -4,10 +4,14 @@ import { eventBus } from "../../../services/eventBus-service.js";
 export default {
     template: `
     <section v-if="mail" class="mail-details">
-        <header>sender: {{mail.from}} <span>At : {{mail.sentAt}}</span></header>
-        <div  v-if="trollMode">  <a :href="fixedTroll">click Here</a></div>
-        <div v-else>{{mail.body}}</div>
-        <button @click="$router.push('/mail')">Back</button>
+        <section class="details-header">
+            <header>Sender: {{mail.from}} <span>At : {{mail.sentAt}}</span></header>
+        </section>
+        <section class="details-body">
+            <div  v-if="trollMode">  <a class="lalala" :href="fixedTroll">click Here</a></div>
+            <div v-else>{{mail.body}}</div>
+        </section>
+        <div class="details-return-btn" @click="$router.push('/mail')"><i class="fa-regular fa-circle-xmark return-btn"></i></div>
     </section>
 `,
     data() {

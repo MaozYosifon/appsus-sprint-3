@@ -7,7 +7,7 @@ export default {
     template: `
 <section  class="flex mail-main-container">
     <div class="nav-bar-container">
-        <mail-nav-bar @composing="onCompose" :mails="mails" @filter="SetFilter"/>
+        <mail-nav-bar @txtFiltering="onTxtSet" @composing="onCompose" :mails="mails" @filter="SetFilter"/>
     </div>
     <div v-if="mails" class="mail-list-container">
 <mail-list @fullyDeleted="onFullyDeleted" @deleted="deletedMail" @readed="readMail" @mailStarred="onMailStar" v-if="mails" :mails="mailsToDispley" />
@@ -36,6 +36,10 @@ export default {
         mailService._createMails().then(mails => this.mails = mails)
     },
     methods: {
+        onTxtSet(txt) {
+            this.filterBy.txt = txt;
+            if (!this.filterBy.txt) this.filterBy.txt = null
+        },
         sendMail(mail) {
             this.onComposeClose
             mailService._sendMail(mail).then(mails => this.mails = mails)
@@ -69,7 +73,7 @@ export default {
 
         },
         SetFilter(str) {
-            this.filterBy = str
+            this.filterBy.status = str
         },
         onMailStar() {
             mailService._createMails().then(mails => this.mails = mails)
@@ -77,31 +81,22 @@ export default {
     },
     computed: {
         mailsToDispley() {
+            console.log(this.filterBy.txt);
             if (this.filterBy === null) return this.mails
-            if (this.filterBy != 'starred') {
+            if (this.filterBy.txt) {
+                const regex = new RegExp(this.filterBy.txt, 'i');
+                return this.mails.filter(mail => { return regex.test(mail.subject) });
+            }
+            if (this.filterBy.status != 'starred') {
                 return this.mails.filter((mail) => {
-                    return mail.status === this.filterBy
+                    return mail.status === this.filterBy.status
                 })
             }
-            // else if (this.filterBy === 'inbox') {
-            //     return this.mails.filter((mail) => {
-            //         return mail.status === this.filterBy
-            //     })
-            else if (this.filterBy === 'starred') {
+            else if (this.filterBy.status === 'starred') {
                 return this.mails.filter((mail) => {
                     return mail.isStarred === true
                 })
             }
-            // } else if (this.filterBy === 'deleted') {
-            //     return this.mails.filter((mail) => {
-            //         return mail.status === this.filterBy
-            //     })
-            // }
-            // else if (this.filterBy === 'sent') {
-            //     return this.mails.filter((mail) => {
-            //         return mail.status === this.filterBy
-            //     })
-            // }
 
             console.log(this.mails);
         }
