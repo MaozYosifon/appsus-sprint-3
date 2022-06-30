@@ -25,7 +25,11 @@ export default {
         return {
             isComposing: false,
             mails: null,
-            filterBy: 'inbox',
+            filterBy: {
+                status: 'inbox',
+                txt: null
+
+            }
         };
     },
     created() {
@@ -74,24 +78,30 @@ export default {
     computed: {
         mailsToDispley() {
             if (this.filterBy === null) return this.mails
-            else if (this.filterBy === 'inbox') {
+            if (this.filterBy != 'starred') {
                 return this.mails.filter((mail) => {
                     return mail.status === this.filterBy
                 })
-            } else if (this.filterBy === 'starred') {
+            }
+            // else if (this.filterBy === 'inbox') {
+            //     return this.mails.filter((mail) => {
+            //         return mail.status === this.filterBy
+            //     })
+            else if (this.filterBy === 'starred') {
                 return this.mails.filter((mail) => {
                     return mail.isStarred === true
                 })
-            } else if (this.filterBy === 'deleted') {
-                return this.mails.filter((mail) => {
-                    return mail.status === this.filterBy
-                })
             }
-            else if (this.filterBy === 'sent') {
-                return this.mails.filter((mail) => {
-                    return mail.status === this.filterBy
-                })
-            }
+            // } else if (this.filterBy === 'deleted') {
+            //     return this.mails.filter((mail) => {
+            //         return mail.status === this.filterBy
+            //     })
+            // }
+            // else if (this.filterBy === 'sent') {
+            //     return this.mails.filter((mail) => {
+            //         return mail.status === this.filterBy
+            //     })
+            // }
 
             console.log(this.mails);
         }
