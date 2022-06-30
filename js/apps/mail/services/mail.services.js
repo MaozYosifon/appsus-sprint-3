@@ -38,7 +38,8 @@ function query() {
 function _sendMail(mail) {
     mail.id = utilService.makeId;
     mail.sentAt = new Date().toISOString().slice(0, 10),
-        saveMail(mail);
+        mail.sentBy = loggedinUser.email
+    saveMail(mail);
     return query()
 }
 
