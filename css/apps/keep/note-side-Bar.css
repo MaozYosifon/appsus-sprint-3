@@ -1,0 +1,29 @@
+.side-bar-container{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    line-height: 2.875;
+    height: 100vh;
+    width: 20%;
+    gap: 20px;
+
+}
+
+.side-bar-btn{
+    display: flex-box;
+    border-top-right-radius: 3rem;
+    border-bottom-right-radius: 3rem;
+    cursor: pointer;
+    height: 3rem;
+}
+
+.side-bar-btn:hover{
+    background-color: rgba(211, 211, 211, 0.492);
+}
+.active{
+    background-color: #feefc3;
+}
+
+.active:hover{
+    background-color: #feefc3;
+}

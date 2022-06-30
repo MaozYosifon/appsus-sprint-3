@@ -1,91 +1,24 @@
-.keep-note-container{
-    width: 100%;
-    display: flex;
-    text-align:center;
 
-}
 
-.note-text-area{
-    box-sizing: border-box;
-    text-align:center;
-    box-shadow: 10px;
-}
-
+/* //*! inon have the same class name  */
 .nav-bar-content{
     flex-direction: column;
 }
+/* //*! inon have the same class name */
 
-.note-text-area input{
-    border-radius: 0.8rem;
-    width: 20em;
-    height: 30px;
-    box-shadow: 0px 0px 8px 1.5px rgba(66, 58, 58, 0.375);
-    font-size: 14px;
-    font-family: Roboto;
-    color: rgb(32, 33, 36);
-    padding-left: 16px;
-    margin-bottom: 2em;
-    border: none;    
-}
+/* note-preview */
 
-.side-bar-container{
-    display: flex;
-    flex-direction: column;
-    justify-items: center;
-    line-height: 2.875;
-    height: 100vh;
-    width: 20%;
-    gap: 20px;
-
-}
-
-.side-bar-btn{
-    display: flex-box;
-    border-top-right-radius: 3rem;
-    border-bottom-right-radius: 3rem;
-    cursor: pointer;
-    height: 3rem;
-}
-
-.side-bar-btn:hover{
-    background-color: rgba(211, 211, 211, 0.492);
-}
-.active{
-    background-color: #feefc3;
-}
-
-.active:hover{
-    background-color: #feefc3;
-}
-
-
-.main-notes-section{
-    width: 80%;
-    margin-left: 2em;
-}
-
-.note-list{ 
-    display: flex;
-    flex-wrap: wrap;
-    gap:1em;
-    /* align-items: center; */
-    /* align-content: center; */
-}
 
 .note-preview {
     flex: 1 0 auto;
-    /* background: #EC985A;
-    color: white; */
     margin: 0 1rem 1rem 0;
     text-align: center;
     border-radius: 1rem;
     border: 1px solid gray;
+    width: 200px;
 }
 
-.note-preview-container{
-    width:250px;
-}
-.note-list{
+.note-preview .note-list{
     /* position: absolute;
     width: 300px;
     height: 300px;
@@ -95,7 +28,24 @@
     color:#feefc3 */
 }
 
-.done{
+.note-preview .done{
     text-decoration: line-through;
 
+}
+
+.note-preview .note-img{
+    border-radius: 0.8rem;
+    width:10em;
+    height: auto;
+}
+
+.note-preview iframe{
+    border-radius: 0.8rem;
+    width: 10em;
+}
+
+.note-preview .note-edit-container{
+    display: flex;
+    justify-content: space-between;
+    margin:0.7em;
 }

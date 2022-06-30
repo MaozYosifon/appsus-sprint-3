@@ -6,6 +6,17 @@
 @import '/css/apps/cmps/user-msg.css';
 
 /* keep CSS */
+
+/* notes-container */
+@import '/css/apps/keep/main-notes-container.css';
+
+/* side-bar-container */
+@import '/css/apps/keep/note-side-Bar.css';
+
+/* note-list */
+@import '/css/apps/keep/note-list.css';
+
+/* note-preview */
 @import '/css/apps/keep/note-preview.css';
 
 /* mail CSS */
