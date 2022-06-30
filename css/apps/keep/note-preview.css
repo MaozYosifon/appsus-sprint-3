@@ -11,10 +11,6 @@
     box-shadow: 10px;
 }
 
-.nav-bar-content{
-    flex-direction: column;
-}
-
 .note-text-area input{
     border-radius: 0.8rem;
     width: 20em;
