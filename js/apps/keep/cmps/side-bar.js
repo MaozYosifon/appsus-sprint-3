@@ -1,15 +1,17 @@
 export default {
     template: `
     <section class="side-bar-container">
-        <div class="side-bar-btn">Notes</div>
-        <div class="side-bar-btn active">Reminders</div>
-        <div class="side-bar-btn">EditLabels</div>
-        <div class="side-bar-btn">Archive</div>
-        <div class="side-bar-btn">Trash</div>
+        <div class="side-bar-btn" :class="{active:isActive}" @click="isActive=!isActive">Notes</div>
+        <div class="side-bar-btn" :class="{active:isActive}" @click="isActive=!isActive">Reminders</div>
+        <div class="side-bar-btn" :class="{active:isActive}" @click="isActive=!isActive">EditLabels</div>
+        <div class="side-bar-btn" :class="{active:isActive}" @click="isActive=!isActive">Archive</div>
+        <div class="side-bar-btn" :class="{active:isActive}" @click="isActive=!isActive">Trash</div>
     </section>
 `,
     data() {
-        return {};
+        return {
+            isActive: false
+        };
     },
     created() { },
     methods: {},

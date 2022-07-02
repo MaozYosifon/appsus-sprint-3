@@ -7,22 +7,17 @@ import noteEdit from '../cmps/utils-cmps/note-edit.cmp.js'
 export default {
     props: ['note'],
     template: `
-        <section class="note-preview" :style="note.style" @click="changeColor">
+        <section class="note-preview" :style="note.style" >
             <component :is="note.type"
                 :info="note.info">
             </component>
-            <note-edit/>
+            <note-edit :note="note"/>
         </section>
      `,
     data() {
-        return {
-            info: null
-        };
+        return {};
     },
     methods: {
-        changeColor() {
-            this.note.style.backgroundColor = 'red';
-        }
     },
     components: {
         noteTxt,

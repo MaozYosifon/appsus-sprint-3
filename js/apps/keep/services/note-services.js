@@ -10,7 +10,9 @@ export const noteService = {
     query,
     remove,
     save,
-    get, addNote,
+    get,
+    addNote,
+    getEmptyNote,
 };
 
 //gets all the notes
@@ -51,6 +53,9 @@ function _createNotes() {
                 info: {
                     title: "WTF ",
                     txt: "Fullstack Me Baby!"
+                },
+                style: {
+                    backgroundColor: getRandomColor()
                 }
             },
             {
@@ -87,6 +92,9 @@ function _createNotes() {
                         { txt: "Driving liscence", doneAt: null },
                         { txt: "Coding power", doneAt: 187111111 }
                     ]
+                },
+                style: {
+                    backgroundColor: getRandomColor()
                 }
             },
             {
@@ -96,19 +104,23 @@ function _createNotes() {
                 info: {
                     title: "WTF ",
                     txt: "Fullstack Me Baby!"
+                },
+                style: {
+                    backgroundColor: getRandomColor()
                 }
             },
             {
                 id: "n106",
                 type: "note-img",
-                isPinned: false,
+                isPinned: true,
                 info: {
-                    url: "https://www.media.hw-static.com/media/2016/10/borat-20th-century-fox-103116.jpg",
+                    url: "https://pbs.twimg.com/profile_images/453366079/angry_400x400.jpg",
                     title: "Bobi and Me"
                 },
                 style: {
                     backgroundColor: getRandomColor()
-                }
+                },
+
             },
             {
                 id: "n107",
@@ -132,6 +144,9 @@ function _createNotes() {
                         { txt: "Driving liscence", doneAt: null },
                         { txt: "Coding power", doneAt: 187111111 }
                     ]
+                },
+                style: {
+                    backgroundColor: getRandomColor()
                 }
             }
         ];
@@ -152,3 +167,29 @@ function getRandomColor() {
     return color;
 }
 
+function getEmptyNote() {
+    return {
+        id: _makeId(),
+        type: "",
+        isPinned: false,
+        info: {
+            txt: "",
+            url: "",
+            title: "",
+            todos: []
+        },
+        style: {
+            backgroundColor: getRandomColor()
+        },
+    }
+}
+
+
+function _makeId(length = 8) {
+    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    for (var i = 0; i < length; i++) {
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+    }
+    return text;
+}

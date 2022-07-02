@@ -1,0 +1,38 @@
+
+.changeColorContainer{
+    position: absolute;
+    background-color: rgba(66, 88, 88, 0.521);
+    height: 2.5em;
+    width: 5em;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    border-radius: 0.3em;
+    padding-left: 0.4em;
+    padding-top: 0.4em;
+}
+
+.changeColor-btn-container > div {
+    height: 0.8em;
+    width: 0.8em;
+    border-radius: 3em;
+    cursor: pointer;
+} 
+
+.add-note-container {
+    margin: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-note-container > form > div {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin: 1em;
+
+}
+
+.add-note-container > form > i {
+    margin: 0 1em;
+}

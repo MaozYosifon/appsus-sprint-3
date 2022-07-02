@@ -8,4 +8,8 @@ export default {
         </section>
           `,
     props: ['info'],
+    data() {
+        return {
+        };
+    },
 }

@@ -1,9 +1,3 @@
-.keep-note-container{
-    width: 100%;
-    display: flex;
-    text-align:center;
-}
-
 .note-text-area{
     box-sizing: border-box;
     text-align:center;
