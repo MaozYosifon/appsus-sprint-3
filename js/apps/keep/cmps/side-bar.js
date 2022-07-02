@@ -1,16 +1,19 @@
 export default {
     template: `
     <section class="side-bar-container">
-        <div class="side-bar-btn" :class="{active:isActive}" @click="isActive=!isActive">Notes</div>
-        <div class="side-bar-btn" :class="{active:isActive}" @click="isActive=!isActive">Reminders</div>
-        <div class="side-bar-btn" :class="{active:isActive}" @click="isActive=!isActive">EditLabels</div>
-        <div class="side-bar-btn" :class="{active:isActive}" @click="isActive=!isActive">Archive</div>
-        <div class="side-bar-btn" :class="{active:isActive}" @click="isActive=!isActive">Trash</div>
+        <div v-for="(item, index) in navItems" class="side-bar-btn" :class="{active: isActive === index}" @click="isActive = index">{{item}}</div>
     </section>
 `,
     data() {
         return {
-            isActive: false
+            navItems: [
+                "Notes",
+                "Reminders",
+                "EditLabels",
+                "Archive",
+                "Trash"
+            ],
+            isActive: 0
         };
     },
     created() { },

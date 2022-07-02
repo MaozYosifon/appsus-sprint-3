@@ -1,27 +1,16 @@
+import todoListItem from "./todo-list-item.js";
 
 export default {
     template: `
         <section class="note-todos-container">
             <h4>{{info.title}}</h4>
-            <ul  v-for="todo in info.todos" >
-                <li :class="onDone" @click="toggleDone">{{todo.txt}}</li>   
+            <ul>
+                <todoListItem :item="todo" v-for="todo in info.todos"/>
             </ul>
         </section>
     `,
+    components: {
+        todoListItem
+    },
     props: ['info'],
-    data() {
-        return {
-            isDone: false
-        };
-    },
-    methods: {
-        toggleDone() {
-            this.isDone = !this.isDone
-        },
-    },
-    computed: {
-        onDone() {
-            return { 'done': this.isDone }
-        }
-    },
 }

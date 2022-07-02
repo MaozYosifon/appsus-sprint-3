@@ -75,7 +75,7 @@ function _createNotes() {
                 type: "note-video",
                 isPinned: false,
                 info: {
-                    url: "https://www.youtube.com/embed/RS7trxkb0zE",
+                    url: "https://www.youtube.com/watch?v=sWOrd50HYa4",
                     title: "Bobi and Me"
                 },
                 style: {
@@ -127,7 +127,7 @@ function _createNotes() {
                 type: "note-video",
                 isPinned: false,
                 info: {
-                    url: "https://www.youtube.com/embed/RS7trxkb0zE",
+                    url: "https://www.youtube.com/watch?v=b63vGc6WW0A",
                     title: "Bobi and Me"
                 },
                 style: {

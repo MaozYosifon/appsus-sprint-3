@@ -33,9 +33,8 @@ export default {
     },
     methods: {
         addNote() {
-            console.log('dddd');
             if (this.note.type) {
-                this.$emit('addingNote', this.note)
+                this.$emit('addingNote', JSON.parse(JSON.stringify(this.note)));
             }
 
         },
