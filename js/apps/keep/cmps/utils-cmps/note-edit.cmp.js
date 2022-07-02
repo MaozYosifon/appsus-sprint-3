@@ -8,7 +8,6 @@ export default {
         <div><i class="fa-solid fa-palette" title="Change background color" @click.stop="onChangeBackgroundColor" ></i>
             <selectNoteColor v-if="isChangeColor" class="changeColorContainer" @updateColor="updateColor"/>
         </div>
-        <div><i class="fa-solid fa-pen-to-square" title="Edit note" @click="onEditNote"></i></div>
         <div><i class="fa-solid fa-trash-can" title="Remove note" @click="onRemoveNote"></i></div>
         <div><i class="fa-solid fa-envelope-open-text" title="Send as mail" @click="onSendMail"></i></div>
         <div><i class="fa-solid fa-thumbtack" title="Pin note" @click="onSetPin"></i></div>
@@ -24,15 +23,18 @@ export default {
     created() { },
     methods: {
         onArchive() {
-            //TODO: SHOW THIS NOTE OA ARCHIVE
+            if (this.note.status === 'archive') {
+                this.note.status = 'notes'
+                noteService.save(this.note)
+                return
+            }
+            this.note.status = 'archive';
+            noteService.save(this.note)
+
         },
         updateColor(color) {
             this.note.style.backgroundColor = color
             noteService.save(this.note)
-                .then(res => console.log(res))
-        },
-        onEditNote() {
-            //TODO: edit the note
         },
         onSetPin() {
             console.log(this.note.isPinned)
@@ -42,7 +44,10 @@ export default {
             //TODO: send mail
         },
         onRemoveNote() {
-            eventBus.emit('remove-note', this.note.id)
+            if (this.note.status === 'trash') {
+                eventBus.emit('remove-note', this.note.id)
+            }
+            this.note.status = 'trash'
         },
         onChangeBackgroundColor() {
             this.isChangeColor = !this.isChangeColor

@@ -8,7 +8,6 @@
 }
 
 .side-bar-btn{
-    display: flex-box;
     border-top-right-radius: 3rem;
     border-bottom-right-radius: 3rem;
     cursor: pointer;
@@ -24,4 +23,7 @@
 
 .active:hover{
     background-color: #feefc3;
+}
+.keep-note-notes-container{
+    width: 87%
 }

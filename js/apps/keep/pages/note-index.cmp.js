@@ -10,29 +10,37 @@ import noteCreating from '../cmps/note-creating.cmp.js'
 export default {
     template: `
         <section v-if="notes" class="keep-note-container">
-            <side-bar/>
-            <section>
-                <noteCreating @addingNote="addNoteDone"/>
-                <note-list :notes="notes"/>
+            <side-bar @sideBarChanged="onSideBarChange" />
+            <section class="keep-note-notes-container">
+                <note-creating @addingNote="addNoteDone"/>
+                <note-list :filterBy="filterBy" :notes="notes"/>
             </section>
         </section>
     `,
     data() {
         return {
             notes: null,
-            removeEventFunc: null
+            removeEventFunc: null,
+            filterBy: 'notes',
         }
     },
     created() {
         noteService.query()
             .then((notes) => {
                 this.notes = notes
+                console.log(notes);
             })
         this.removeEventFunc = eventBus.on('remove-note', this.removeNote)
 
     },
     methods: {
+        onSideBarChange(str) {
+            console.log(str.toLowerCase());
+            this.filterBy = str.toLowerCase();
+
+        },
         removeNote(noteId) {
+
             noteService.remove(noteId)
                 .then(() => {
                     this.notes = this.notes.filter(note => note.id !== noteId);

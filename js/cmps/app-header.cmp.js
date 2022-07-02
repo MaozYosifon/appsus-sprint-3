@@ -9,7 +9,7 @@ export default {
 
                 <router-link to="/"><i class="fas fa-home"></i></router-link>|
                 <router-link to="/Mail"> <i class="fa fa-envelope" aria-hidden="true"></i></router-link>|
-                <router-link to="/Keep">Keep</router-link>|
+                <router-link to="/Keep"><i class="fa-solid fa-note-sticky"></i></router-link>|
                 <router-link to="/about"><i class="fa-solid fa-address-card"></i></router-link>|
             </nav>
             

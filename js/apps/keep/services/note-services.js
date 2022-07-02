@@ -50,6 +50,7 @@ function _createNotes() {
                 id: "n101",
                 type: "note-txt",
                 isPinned: true,
+                status: 'notes',
                 info: {
                     title: "WTF ",
                     txt: "Fullstack Me Baby!"
@@ -62,6 +63,7 @@ function _createNotes() {
                 id: "n102",
                 type: "note-img",
                 isPinned: false,
+                status: 'notes',
                 info: {
                     url: "https://www.media.hw-static.com/media/2016/10/borat-20th-century-fox-103116.jpg",
                     title: "Bobi and Me"
@@ -74,6 +76,7 @@ function _createNotes() {
                 id: "n103",
                 type: "note-video",
                 isPinned: false,
+                status: 'notes',
                 info: {
                     url: "https://www.youtube.com/watch?v=sWOrd50HYa4",
                     title: "Bobi and Me"
@@ -86,6 +89,7 @@ function _createNotes() {
                 id: "n104",
                 type: "note-todos",
                 isPinned: false,
+                status: 'notes',
                 info: {
                     title: "Get my stuff together",
                     todos: [
@@ -101,6 +105,7 @@ function _createNotes() {
                 id: "n105",
                 type: "note-txt",
                 isPinned: true,
+                status: 'notes',
                 info: {
                     title: "WTF ",
                     txt: "Fullstack Me Baby!"
@@ -113,6 +118,7 @@ function _createNotes() {
                 id: "n106",
                 type: "note-img",
                 isPinned: true,
+                status: 'notes',
                 info: {
                     url: "https://pbs.twimg.com/profile_images/453366079/angry_400x400.jpg",
                     title: "Bobi and Me"
@@ -126,6 +132,7 @@ function _createNotes() {
                 id: "n107",
                 type: "note-video",
                 isPinned: false,
+                status: 'notes',
                 info: {
                     url: "https://www.youtube.com/watch?v=b63vGc6WW0A",
                     title: "Bobi and Me"
@@ -138,6 +145,7 @@ function _createNotes() {
                 id: "n108",
                 type: "note-todos",
                 isPinned: false,
+                status: 'notes',
                 info: {
                     title: "Get my stuff together",
                     todos: [
@@ -172,11 +180,14 @@ function getEmptyNote() {
         id: _makeId(),
         type: "",
         isPinned: false,
+        status: 'notes',
         info: {
             txt: "",
             url: "",
             title: "",
-            todos: []
+            todos: [
+                { txt: '' }
+            ]
         },
         style: {
             backgroundColor: getRandomColor()
