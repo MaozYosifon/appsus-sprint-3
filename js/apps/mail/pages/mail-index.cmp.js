@@ -2,6 +2,7 @@ import mailNavBar from "../cmps/mail-nav-bar.cmp.js";
 import { mailService } from "../services/mail.services.js"
 import mailList from "../cmps/mail-list.cmp.js";
 import mailCompose from "../cmps/mail-compose.cmp.js";
+import { eventBus } from "../../../services/eventBus-service.js";
 // import { showSuccessMsg, showErrorMsg } from "../../../services/eventBus-service.js";
 
 export default {
@@ -62,6 +63,7 @@ export default {
             mailService.remove(mail.id)
                 .then(res => mailService._createMails())
                 .then(mails => this.mails = mails)
+            eventBus.emit('show-msg', { txt: 'hi', type: 'success' })
 
         },
         deletedMail(mail) {

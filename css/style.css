@@ -1,25 +1,25 @@
 
     /* Main Pages Layouts */
-@import '/css/apps/cmps/app-home.css';
+@import './apps/cmps/app-home.css';
 
 /* user-msg.css */
-@import '/css/apps/cmps/user-msg.css';
+@import './apps/cmps/user-msg.css';
 
 /* keep CSS */
-@import '/css/apps/keep/note-index.css';
-@import '/css/apps/keep/main-notes-container.css';
-@import '/css/apps/keep/note-side-Bar.css';
-@import '/css/apps/keep/note-list.css';
-@import '/css/apps/keep/note-preview.css';
-@import '/css/apps/keep/note-edit.css';
-@import '/css/apps/keep/note-creating.css';
+@import './apps/keep/note-index.css';
+@import './apps/keep/main-notes-container.css';
+@import './apps/keep/note-side-Bar.css';
+@import './apps/keep/note-list.css';
+@import './apps/keep/note-preview.css';
+@import './apps/keep/note-edit.css';
+@import './apps/keep/note-creating.css';
 
 /* mail CSS */
-@import '/css/apps/mail/mail-content.css';
-@import '/css/apps/mail/mail.css';
-@import '/css/apps/mail/mail-compose.css';
-@import '/css/apps/mail/mail-details.css';
+@import './apps/mail/mail-content.css';
+@import './apps/mail/mail.css';
+@import './apps/mail/mail-compose.css';
+@import './apps/mail/mail-details.css';
 /* parts */
-@import '/css/apps/parts/helpers.css';
-@import '/css/apps/parts/fonts.css';
-@import '/css/apps/parts/base.css';
+@import './apps/parts/helpers.css';
+@import './apps/parts/fonts.css';
+@import './apps/parts/base.css';

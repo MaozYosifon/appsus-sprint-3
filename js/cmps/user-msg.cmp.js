@@ -6,7 +6,7 @@ export default {
  <section v-if="msg" class="user-msg" :class="msg.type">
     <h3>User msg</h3>
     <p>{{msg.txt}}</p>
-    <router-link :to="msg.link">Check it Out</router-link>
+    <!-- <router-link :to="msg.link">Check it Out</router-link> -->
     
  </section>
 `,
@@ -22,6 +22,7 @@ export default {
     methods: {
         showMsg(msg) {
             this.msg = msg
+            console.log('im hereee');
             setTimeout(() => {
                 this.msg = null
             }, 3000)
